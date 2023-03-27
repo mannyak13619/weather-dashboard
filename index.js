@@ -35,6 +35,8 @@ fetch(apiurl)
   console.log(data)
   console.log(data.list[0].main.temp)
   temp1.textContent=data.list[0].main.temp
+  
+  
   temp2.textContent=data.list[8].main.temp
   temp3.textContent=data.list[16].main.temp
   temp4.textContent=data.list[24].main.temp
