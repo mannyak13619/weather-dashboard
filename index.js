@@ -26,26 +26,12 @@ var wind4 = document.getElementById("wind4")
 var wind5 = document.getElementById("wind5")
 var wind6 = document.getElementById("wind6")
 var icon1=document.getElementById("icon1")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+var cityname1=document.getElementById("cityname1")
+var icon2=document.getElementById("icon2")
+var icon3=document.getElementById("icon3")
+var icon4=document.getElementById("icon4")
+var icon5=document.getElementById("icon5")
+var icon6=document.getElementById("icon6")
 
 searchbtn.addEventListener("submit", main)
 //this will check your local storage for a "storedAPI" key, and return its value, or it will use your API of choice to create it
@@ -81,38 +67,46 @@ async function main(event) {
             date1.textContent = data.list[0].dt_txt.split(" ")[0]
             humidity1.textContent = data.list[0].main.humidity
             wind1.textContent = data.list[0].wind.speed
-            icon1.textContent=data.list[0].weather[0].main
             
+            var img1="https://openweathermap.org/img/wn/"+data.list[0].weather[0].icon+"@2x.png" 
+            icon1.src=img1
+            cityname1.textContent=cityname.value
 
 
             temp2.textContent = data.list[8].main.temp
             date2.textContent = data.list[8].dt_txt.split(" ")[0]
             humidity2.textContent = data.list[8].main.humidity
             wind2.textContent = data.list[8].wind.speed
-
+            var img1="https://openweathermap.org/img/wn/"+data.list[8].weather[0].icon+"@2x.png" 
+            icon2.src=img1
 
             temp3.textContent = data.list[16].main.temp
             date3.textContent = data.list[16].dt_txt.split(" ")[0]
             humidity3.textContent = data.list[16].main.humidity
             wind3.textContent = data.list[16].wind.speed
-
+            var img1="https://openweathermap.org/img/wn/"+data.list[16].weather[0].icon+"@2x.png" 
+            icon3.src=img1
 
             temp4.textContent = data.list[24].main.temp
             date4.textContent = data.list[24].dt_txt.split(" ")[0]
             humidity4.textContent = data.list[24].main.humidity
             wind4.textContent = data.list[24].wind.speed
-
+            var img1="https://openweathermap.org/img/wn/"+data.list[24].weather[0].icon+"@2x.png" 
+            icon4.src=img1
 
             temp5.textContent = data.list[32].main.temp
             date5.textContent = data.list[32].dt_txt.split(" ")[0]
             humidity5.textContent = data.list[32].main.humidity
             wind5.textContent = data.list[32].wind.speed
-
+            var img1="https://openweathermap.org/img/wn/"+data.list[32].weather[0].icon+"@2x.png" 
+            
+            icon5.src=img1
             temp6.textContent = data.list[39].main.temp
             date6.textContent = data.list[39].dt_txt.split(" ")[0]
             humidity6.textContent = data.list[39].main.humidity
             wind6.textContent = data.list[39].wind.speed
-
+            var img1="https://openweathermap.org/img/wn/"+data.list[39].weather[0].icon+"@2x.png" 
+            icon6.src=img1
         });
 
     //main is basically our new top-level if we are writing anything that needs access to the storedAPI objects, since we don't have a bundler that gives us top-level async/await. Therefore:
